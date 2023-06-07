@@ -1,18 +1,16 @@
 ---
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
-
+import Resume from '../assets/pdfs/Januston_Nicholas_Resume_2023.pdf'
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import LatestPosts from '~/components/blog/LatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
+import Features from '~/components/widgets/Features.astro';
+import { Icon } from 'astro-icon';
 const meta = {
   title: SITE.title,
   description: SITE.description,
@@ -23,329 +21,184 @@ const meta = {
 <Layout {meta}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-    callToAction2={{ text: 'Learn more', href: '#features' }}
-    image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }}
-  >
+  <Hero>
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 2.0</span> + Tailwind CSS    </Fragment>
+      Hi, I'm <span class="text-accent dark:text-white highlight"> Januston Nicholas</span>
+    </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0 +
-        Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
-      Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
+      <span class="sm:inline">
+        <span class="font-semibold">As a passionate web and software developer 🌐 with extensive experience, I bring a wealth of knowledge and expertise to every project. 💻</span> 
+        <span class="font-semibold">I love to create innovative solutions that make a real difference in people's lives. 🔥</span>
+        </br></br>
+        <span class="font-semibold">When I'm not coding, you can usually find me relaxing by playing video games, reading, or watching my favorite shows. 🎮📚📺</span>
+        <span class="font-semibold">If you're looking for a dedicated and talented developer to bring your ideas to life, I'm here to help. Let's create something amazing together! 🤝💪🚀</span> 
+        </br></br>
+        <span>
+          <a class="btn" href={Resume} target="_blank">Resume</a>
+        </span>
     </Fragment>
   </Hero>
-
-  <!-- Note Widget ******************* -->
-
-  <Note />
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    highlight="Features"
-    title="What you get with AstroWind"
-    subtitle="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae."
-    items={[
-      [
-        {
-          title: 'Astro + Tailwind CSS Integration',
-          description:
-            'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-          icon: 'tabler:brand-tailwind',
-        },
-        {
-          title: 'Ready-to-use Components',
-          description:
-            'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-          icon: 'tabler:components',
-        },
-        {
-          title: 'Best Practices',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:list-check',
-        },
-      ],
-      [
-        {
-          title: 'Excellent Page Speed',
-          description:
-            'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-          icon: 'tabler:rocket',
-        },
-        {
-          title: 'Search Engine Optimization (SEO)',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:arrows-right-left',
-        },
-        {
-          title: 'Open to new ideas and contributions',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-          icon: 'tabler:bulb',
-        },
-      ],
-    ]}
-  />
 
   <!-- Content Widget **************** -->
 
   <Content
-    highlight="Inside template"
-    title="And what's inside? ..."
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-        description:
-          'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-        description:
-          'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-        description:
-          'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
-      },
-    ]}
+    highlight="Here are some of the places where I've worked"
+    title="Software Development Experience"
     image={{
-      src: import('~/assets/images/caos.jpg'),
+      src: import('~/assets/images/yuja.jpg'),
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Ad vix debet docendi</h3>
-      Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod
-      tacimates.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">YuJa</h3>
+      During my time at Yuja as a Full Stack Developer, I worked on several projects that improved the functionality and usability of the company's products. 🚀 I developed API endpoints to allow seamless integration of the company's Chrome extension with other tools, and created authentication workflows for Learning Management Systems (LMS), streamlining the quiz creation process and saving significant time for instructors. 🔑
+      <br/><br/>
+      As part of my role, I also redesigned a key feature of the platform using React and updated quiz interception code for multiple learning management systems, ensuring accurate assessment of student performance and improving quiz-taking integrity. 🎓 I have experience working with LTI, LMS, Chrome Extensions, React, TypeScript, HTML, CSS, SQL, Figma, and Github. 💻  
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
+  <Content
+    isReversed
+    image={{
+      src: import('~/assets/images/ss&c.jpg'),
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">SS&C Technologies</h3>
+      During my time at SS&C Technologies as a Software Developer, I spearheaded several projects that significantly improved the efficiency and user experience of the company's systems. 🔧 Utilizing a variety of tools and technologies, including Apache Nifi, Five9, PostgreSQL, Java, Spring Boot, HTML, CSS, and Github, I developed an API that streamlined deletion of outdated records in an Inference Datastore and an HTML Tree 🌳 to display business groups using API calls, resulting in better navigation for users. Additionally, I optimized Five9 call flows and reorganized Five9 data, reducing caller wait times and improving overall caller experience. 📞  
+    </Fragment>
+  </Content>
+
+  <Content
+  image={{
+    src: import('~/assets/images/purolator.jpg'),
+    alt: 'Colorful Image',
+  }}>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Purolator</h3>
+      During my time as a Marketing Front End Developer at Purolator 🚚, I contributed to several projects that improved the company's online presence and user experience. One of my notable accomplishments was revamping the Purolator website using Drupal 8, PHP, HTML, CSS, and JavaScript, resulting in a measurable increase in website traffic 💻. Additionally, I developed an innovative HTML and JSON generator using a PHP script and template, which dynamically produced over 700 locator pages through the use of API calls and CSV data 💾. This project significantly improved the user experience and increased overall customer satisfaction 🌎. My proficiency in Drupal 8, PHP, HTML, CSS, Javascript, and Photoshop allowed me to effectively contribute to these projects.
+    </Fragment>
+  </Content>
 
   <Content
     isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-      {
-        title: 'Per ei quaeque sensibus',
-      },
-      {
-        title: 'Cu imperdiet posidonium sed',
-      },
-      {
-        title: 'Nulla omittam sadipscing mel ne',
-      },
-    ]}
     image={{
-      src: import('~/assets/images/vintage.jpg'),
-      alt: 'Vintage Image',
+      src: import('~/assets/images/teranet.jpg'),
+      alt: 'Colorful Image',
     }}
-  />
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Teranet</h3>
+      During my time at Teranet 🏞️ as a Software Developer, I played an integral role in the development of the client portal, utilizing Java, Angular JS, JavaScript, HTML, and Python to significantly enhance the user experience. Notable achievements include the successful implementation of intuitive and user-friendly features, resulting in increased engagement and higher user satisfaction levels. 📈
+      <br/><br/>
+      I also used Postman, SQL Developer, and Soap UI 📨💾🧼 to streamline debugging and updating of consumer reports through data retrieval and API requests. In my role, I worked with Apache Tomcat 🐈, HTML, CSS, Angular JS, Batch Script Automation, Python with ImageMagick, SQL, and Github to successfully complete these projects.
+    </Fragment>
+  </Content>
 
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula.',
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</em>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: import('~/assets/images/creativity.jpg'),
-      alt: 'Steps image',
-    }}
-  />
-
+  <Content
+  image={{
+    src: import('~/assets/images/tyltgo.jpg'),
+    alt: 'Colorful Image',
+  }}>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">TyltGo (YCS20)</h3>
+      As a Web Developer at TyltGo (YCS20), I collaborated with a cross-functional team to redesign and add features to a website using Angular 2+, HTML, Sass, CSS, and Typescript. This resulted in increased traffic 📈 and user engagement 👥.
+      <br/><br/>
+      💻 I led the development of a new client portal and implemented Jasmine and Karma test cases, reducing overall development time. I also used Figma 🎨 and Bootstrap to design and style the website.
+      <br/><br/>
+      In addition to my technical expertise in Angular 2+, HTML, CSS, Typescript, Sass, Figma, and Bootstrap, I gained experience working in an agile development 🏃‍♂️ environment and honed my collaboration and communication skills.
+    </Fragment>
+  </Content>
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    highlight="Components"
+    title="Personal and University Projects"
+    subtitle=""
+    highlight="Here are some recent projects that I have been involved in"
     items={[
       {
-        title: 'Headers',
+        title: 'Personal Website 🌐',
         description:
-          'In general, Headers contain information that makes it easier for visitors to interact with the website.',
-        icon: 'flat-color-icons:template',
+          "👋 Welcome to my personal website, and I'm thrilled you found it! This website is a fun way for me to showcase my experiences and skills as a web developer. It was built using a range of technologies, including HTML, CSS/SASS, and Javascript. I also utilized the powerful open-source Astro 2.0 framework and the versatile Tailwind CSS library 🌀 to create a seamless and modern design. Thank you for taking the time to explore my website and learn more about my work! ",
+        icon: 'tabler:app-window',
       },
       {
-        title: 'Heros',
+        title: 'Real-Time OS 🕰️',
         description:
-          'If you want your website to get more than its fair share of visitors, the Hero section needs to be stellar.',
-        icon: 'flat-color-icons:gallery',
+          "Check out my experience working on a real-time operating system project! I collaborated with a team to develop the system using the μVision Kiel IDE and implemented a binary buddy system to manage memory. We achieved interprocess communication with mailboxes and prioritized tasks using an Earliest Deadline First (EDF) scheduling algorithm to ensure timely completion ⏰. It was a challenging and rewarding project, and I'm proud to have been a part of it!",
+        icon: 'tabler:cpu',
       },
       {
-        title: 'Features',
+        title: 'MLB Hall of Fame Predictor ⚾️',
         description:
-          'Display your product in action and how the Features actually create a solution for your target customer.',
-        icon: 'flat-color-icons:todo-list',
+          "Introducing the MLB Hall of Fame Predictor! Using the powerful SK-Learn library in Python 🐍, I've created a predictive model that determines a player's likelihood of being inducted into the Hall of Fame based on their stats. With the help of SQL, I ensured that the baseball data bank from 2022 was properly scrubbed and outputted to a CSV for model training and testing. The accuracy of the model is a stunning 94%, so get ready to predict the future Hall of Famers! 🏆⚾️",
+        icon: 'tabler:brand-python',
       },
       {
-        title: 'Content',
+        title: 'Taiga Bot 🤖',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:document',
+          "Meet the Taiga bot, a Discord bot I developed in early 2021! With Discord's ban on public music bots, I saw a need for a new solution. Taiga not only plays music through Discord 🎵, but it also finds gifs and images based on prompts. This versatile bot can join and leave voice channels, queue up music, loop queues or songs, and even pause music. I used JavaScript and Node.js with the Slappey JS library to bring this project to life. The Taiga bot has been a great addition to my Discord server, providing my friends and me with endless entertainment during our calls 📞.",
+        icon: 'tabler:brand-discord',
       },
       {
-        title: 'Call-to-Action',
+        title: 'RGB Light Sign 💡',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:advertising',
+          "I had the opportunity to work on an exciting hardware project where I designed and created a 36 by 2.5 inch RGB light board, which could be programmed and controlled using a PIC 16F690 microcontroller.  I even designed the PCB using the Eagle board development software 🦅 and hand-assembled and soldered each board myself. The programming was done in assembly language, and the final product had the ability to strobe and change colors with ease. The end result was a mesmerizing LED sign, which not only showcased my hardware skills but also my ability to design and program functional and visually appealing products.",
+        icon: 'tabler:bulb',
       },
       {
-        title: 'Pricing',
+        title: 'Line Tracing Robot 🔍',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:currency-exchange',
+          "As a computer engineering student 👨‍🔬, I also enjoy working on hardware projects. One of my earliest projects was the Line Tracing Robot, which was equipped with two UV sensors and controlled using the PIC 16F690 microcontroller. This bot was programmed in assembly language and could navigate custom tracks by detecting and following the reflected UV light with its sensors 🎚️. It was a challenging and exciting project that allowed me to gain hands-on experience with both hardware and software.",
+        icon: 'tabler:crosshair',
       },
-      {
-        title: 'Testimonial',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-        icon: 'icon-park:page-template',
-      },
-    ]}
-  />
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <LatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-    postIds={[
-      'get-started-website-with-astro-tailwind-css.md',
-      'how-to-customize-astrowind-to-your-brand.md',
-      'useful-resources-to-create-websites.md',
-      'astrowind-template-in-depth.md',
-    ]}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Duis turpis dui, fringilla mattis sem nec, fringilla euismod neque. Morbi tincidunt lacus nec tortor scelerisque pulvinar."
-    highlight="FAQs"
-    items={[
-      [
-        {
-          question: 'What do I need to start?',
-          answer:
-            'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-        },
-        {
-          question: 'How to install the Astro + Tailwind CSS template?',
-          answer:
-            "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.",
-        },
-        {
-          question: "What's something that you don't understand?",
-          answer:
-            "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-        },
-      ],
-      [
-        {
-          question: "What's an example of when you changed your mind?",
-          answer:
-            "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-        },
-        {
-          question: 'What is something that you would like to try again?',
-          answer:
-            "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-        },
-        {
-          question: 'If you could only ask one question to each person you meet, what would that question be?',
-          answer:
-            "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-        },
-      ],
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    items={[
-      { name: 'Downloads', value: '132K' },
-      { name: 'Stars', value: '24.8K' },
-      { name: 'Forks', value: '10.3K' },
-      { name: 'Users', value: '48.4K' },
     ]}
   />
 
   <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    callToAction={{
-      text: 'Get template',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:download',
-    }}
+  <Content
+    highlight="Here's a quick look at the skills I have developed throughout my career"
+    title="Technical Skills"
   >
-    <Fragment slot="title">
-      Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      <div class="chip mx-2 my-2">Angular 2+</div>
+      <div class="chip mx-2 my-2">Angular JS</div>
+      <div class="chip mx-2 my-2">Astro</div>
+      <div class="chip mx-2 my-2">Assembly</div>
+      <div class="chip mx-2 my-2">Batch Scripts</div>
+      <div class="chip mx-2 my-2">Bootstrap</div>
+      <div class="chip mx-2 my-2">C</div>
+      <div class="chip mx-2 my-2">C++</div>
+      <div class="chip mx-2 my-2">Chrome Extension</div>
+      <div class="chip mx-2 my-2">CSS/Sass</div>
+      <div class="chip mx-2 my-2">Docker</div>
+      <div class="chip mx-2 my-2">Drupal 8</div>
+      <div class="chip mx-2 my-2">Five9</div>
+      <div class="chip mx-2 my-2">Git/GitHub</div>
+      <div class="chip mx-2 my-2">HTML5</div>
+      <div class="chip mx-2 my-2">Java</div>
+      <div class="chip mx-2 my-2">JavaScript</div>
+      <div class="chip mx-2 my-2">LMS</div>
+      <div class="chip mx-2 my-2">LTI</div>
+      <div class="chip mx-2 my-2">Material UI</div>
+      <div class="chip mx-2 my-2">MySQL</div>
+      <div class="chip mx-2 my-2">Nifi</div>
+      <div class="chip mx-2 my-2">PHP</div>
+      <div class="chip mx-2 my-2">React</div>
+      <div class="chip mx-2 my-2">SQL Developer</div>
+      <div class="chip mx-2 my-2">Typescript</div>
+      <div class="chip mx-2 my-2">Visual Studio Code</div>
     </Fragment>
-  </CallToAction>
+  </Content>
+
+  <Features
+    title="Want to work with me?"
+    items={[]}
+  >
+    <Fragment slot="subtitle">
+      <a class="btn" href="mailto: januston.nicholas@outlook.com" target="_blank"><Icon name='tabler:mail' class="w-10 h-10 mr-3"/>Send me an email</a>
+    </Fragment>
+  </Features>
 </Layout>
