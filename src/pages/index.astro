@@ -1,26 +1,31 @@
 ---
-import { SITE } from '~/config.mjs';
+// Feature Imports
 import Layout from '~/layouts/PageLayout.astro';
-import Resume from '../assets/pdfs/Januston_Nicholas_Resume_2023.pdf'
 import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import LatestPosts from '~/components/blog/LatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features from '~/components/widgets/Features.astro';
-import { Icon } from 'astro-icon';
-const meta = {
-  title: SITE.title,
-  description: SITE.description,
-  dontUseTitleTemplate: true,
+
+// Images
+import appficiencyImage from '~/assets/images/appficiency.png';
+import yujaImage from '~/assets/images/yuja.jpg';
+import sscImage from '~/assets/images/ss&c.jpg';
+import purolatorImage from '~/assets/images/purolator.jpg';
+import teranetImage from '~/assets/images/teranet.jpg';
+import tyltgoImage from '~/assets/images/tyltgo.jpg';
+import ezsecImage from '~/assets/images/ezsec.png';
+
+// Pdfs
+import Resume from '../assets/pdfs/Januston_Nicholas_Resume_2023.pdf'
+
+const metadata = {
+  title: 'Januston Nicholas',
+  ignoreTitleTemplate: true,
 };
 ---
 
-<Layout {meta}>
+<Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
   <Hero>
     <Fragment slot="title">
       Hi, I'm <span class="text-accent dark:text-white highlight"> Januston Nicholas</span>
@@ -42,10 +47,12 @@ const meta = {
 
   <!-- Content Widget **************** -->
   <Content
+    highlight="Here are some of the places where I've worked"
+    title="Software Development Experience"
     isReversed
     image={{
-      src: import('~/assets/images/appficiency.png'),
-      alt: 'Colorful Image',
+      src: appficiencyImage,
+      alt: 'Appficiency Logo',
     }}
   >
     <Fragment slot="content">
@@ -55,11 +62,9 @@ const meta = {
   </Content>
 
   <Content
-    highlight="Here are some of the places where I've worked"
-    title="Software Development Experience"
     image={{
-      src: import('~/assets/images/yuja.jpg'),
-      alt: 'Colorful Image',
+      src: yujaImage,
+      alt: 'Yuja Logo',
     }}
   >
     <Fragment slot="content">
@@ -73,8 +78,8 @@ const meta = {
   <Content
     isReversed
     image={{
-      src: import('~/assets/images/ss&c.jpg'),
-      alt: 'Colorful Image',
+      src: sscImage,
+      alt: 'SS&C Logo',
     }}
   >
     <Fragment slot="content">
@@ -85,8 +90,8 @@ const meta = {
 
   <Content
   image={{
-    src: import('~/assets/images/purolator.jpg'),
-    alt: 'Colorful Image',
+    src: purolatorImage,
+    alt: 'Purolator Logo',
   }}>
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Purolator</h3>
@@ -97,8 +102,8 @@ const meta = {
   <Content
     isReversed
     image={{
-      src: import('~/assets/images/teranet.jpg'),
-      alt: 'Colorful Image',
+      src: teranetImage,
+      alt: 'Teranet Logo',
     }}
   >
     <Fragment slot="content">
@@ -111,8 +116,8 @@ const meta = {
 
   <Content
   image={{
-    src: import('~/assets/images/tyltgo.jpg'),
-    alt: 'Colorful Image',
+    src: tyltgoImage,
+    alt: 'Tyltgo Logo',
   }}>
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">TyltGo (YCS20)</h3>
@@ -123,94 +128,212 @@ const meta = {
       In addition to my technical expertise in Angular 2+, HTML, CSS, Typescript, Sass, Figma, and Bootstrap, I gained experience working in an agile development 🏃‍♂️ environment and honed my collaboration and communication skills.
     </Fragment>
   </Content>
-  <!-- Features2 Widget ************** -->
 
-  <Features2
-    title="Personal and University Projects"
-    subtitle=""
-    highlight="Here are some recent projects that I have been involved in"
-    items={[
-      {
-        title: 'Personal Website 🌐',
-        description:
-          "👋 Welcome to my personal website, and I'm thrilled you found it! This website is a fun way for me to showcase my experiences and skills as a web developer. It was built using a range of technologies, including HTML, CSS/SASS, and Javascript. I also utilized the powerful open-source Astro 2.0 framework and the versatile Tailwind CSS library 🌀 to create a seamless and modern design. Thank you for taking the time to explore my website and learn more about my work! ",
-        icon: 'tabler:app-window',
-      },
-      {
-        title: 'Real-Time OS 🕰️',
-        description:
-          "Check out my experience working on a real-time operating system project! I collaborated with a team to develop the system using the μVision Kiel IDE and implemented a binary buddy system to manage memory. We achieved interprocess communication with mailboxes and prioritized tasks using an Earliest Deadline First (EDF) scheduling algorithm to ensure timely completion ⏰. It was a challenging and rewarding project, and I'm proud to have been a part of it!",
-        icon: 'tabler:cpu',
-      },
-      {
-        title: 'MLB Hall of Fame Predictor ⚾️',
-        description:
-          "Introducing the MLB Hall of Fame Predictor! Using the powerful SK-Learn library in Python 🐍, I've created a predictive model that determines a player's likelihood of being inducted into the Hall of Fame based on their stats. With the help of SQL, I ensured that the baseball data bank from 2022 was properly scrubbed and outputted to a CSV for model training and testing. The accuracy of the model is a stunning 94%, so get ready to predict the future Hall of Famers! 🏆⚾️",
-        icon: 'tabler:brand-python',
-      },
-      {
-        title: 'Taiga Bot 🤖',
-        description:
-          "Meet the Taiga bot, a Discord bot I developed in early 2021! With Discord's ban on public music bots, I saw a need for a new solution. Taiga not only plays music through Discord 🎵, but it also finds gifs and images based on prompts. This versatile bot can join and leave voice channels, queue up music, loop queues or songs, and even pause music. I used JavaScript and Node.js with the Slappey JS library to bring this project to life. The Taiga bot has been a great addition to my Discord server, providing my friends and me with endless entertainment during our calls 📞.",
-        icon: 'tabler:brand-discord',
-      },
-      {
-        title: 'RGB Light Sign 💡',
-        description:
-          "I had the opportunity to work on an exciting hardware project where I designed and created a 36 by 2.5 inch RGB light board, which could be programmed and controlled using a PIC 16F690 microcontroller.  I even designed the PCB using the Eagle board development software 🦅 and hand-assembled and soldered each board myself. The programming was done in assembly language, and the final product had the ability to strobe and change colors with ease. The end result was a mesmerizing LED sign, which not only showcased my hardware skills but also my ability to design and program functional and visually appealing products.",
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'Line Tracing Robot 🔍',
-        description:
-          "As a computer engineering student 👨‍🔬, I also enjoy working on hardware projects. One of my earliest projects was the Line Tracing Robot, which was equipped with two UV sensors and controlled using the PIC 16F690 microcontroller. This bot was programmed in assembly language and could navigate custom tracks by detecting and following the reflected UV light with its sensors 🎚️. It was a challenging and exciting project that allowed me to gain hands-on experience with both hardware and software.",
-        icon: 'tabler:crosshair',
-      },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
   <Content
-    highlight="Here's a quick look at the skills I have developed throughout my career"
-    title="Technical Skills"
-  >
-    <Fragment slot="subtitle">
-      <div class="chip mx-2 my-2">Angular 2+</div>
-      <div class="chip mx-2 my-2">Angular JS</div>
-      <div class="chip mx-2 my-2">Astro</div>
-      <div class="chip mx-2 my-2">Assembly</div>
-      <div class="chip mx-2 my-2">Batch Scripts</div>
-      <div class="chip mx-2 my-2">Bootstrap</div>
-      <div class="chip mx-2 my-2">C</div>
-      <div class="chip mx-2 my-2">C++</div>
-      <div class="chip mx-2 my-2">Chrome Extension</div>
-      <div class="chip mx-2 my-2">CSS/Sass</div>
-      <div class="chip mx-2 my-2">Docker</div>
-      <div class="chip mx-2 my-2">Drupal 8</div>
-      <div class="chip mx-2 my-2">Five9</div>
-      <div class="chip mx-2 my-2">Git/GitHub</div>
-      <div class="chip mx-2 my-2">HTML5</div>
-      <div class="chip mx-2 my-2">Java</div>
-      <div class="chip mx-2 my-2">JavaScript</div>
-      <div class="chip mx-2 my-2">LMS</div>
-      <div class="chip mx-2 my-2">LTI</div>
-      <div class="chip mx-2 my-2">Material UI</div>
-      <div class="chip mx-2 my-2">MySQL</div>
-      <div class="chip mx-2 my-2">Nifi</div>
-      <div class="chip mx-2 my-2">PHP</div>
-      <div class="chip mx-2 my-2">React</div>
-      <div class="chip mx-2 my-2">SQL Developer</div>
-      <div class="chip mx-2 my-2">Typescript</div>
-      <div class="chip mx-2 my-2">Visual Studio Code</div>
+  isReversed
+  image={{
+    src: ezsecImage,
+    alt: 'ezSec Logo',
+  }}>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">ezSec</h3>
+      At ezSec, I focused on mapping out key compliance standards like MITRE ATTACK, NIST 800-53, HIPAA, PCI DSS, and GDPR within Grafana and Kibana.
+      My primary responsibility was to create intuitive dashboards that visually represented these compliances, ensuring a locked-down 🔒 and comprehensive
+      view of our security posture. These dashboards became essential tools for our team, simplifying the monitoring and analysis of our adherence to
+      these standards. 📊
     </Fragment>
   </Content>
 
-  <Features
-    title="Want to work with me?"
-    items={[]}
+
+   <!-- Features2 Widget ************** -->
+    <Features2
+      title="Personal and University Projects"
+      tagline="Here are some recent projects that I have been involved in"
+      items={[
+        {
+          title: 'KeeperVision ⚽',
+          description:
+            "KeeperVision ⚽️🥅 is a game-changer in the realm of goalkeeping assistance. Developed by a dedicated small team, this app harnesses the YOLO object detection algorithm 🔍, ensuring that goalies are always in their optimal position. With real-time feedback during training sessions 🛠️ and a focus on AI-driven enhancements, KeeperVision stands as a pioneering solution in sports technology. It's a groundbreaking venture, and I'm proud to have contributed to its success! 🌟",
+          icon: 'tabler:soccer-field',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '<a href="https://github.com/Januston/KeeperVision-Sample">View on GitHub</a>',  // Text for the call to action button
+            icon: 'tabler:brand-github',  // Any icon for the button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+        {
+          title: 'ShortEase 🎬',
+          description:
+            "Discover the innovation behind ShortEase, the ultimate YouTube Shorts automation app 🎥. Designed to streamline the content creation process, this app empowers users to download, edit, and upload YouTube videos across any of their accounts seamlessly. What sets ShortEase apart is its intelligent automation, utilizing specific metrics to guide the editing process 📊. By integrating advanced algorithms and user-friendly features, ShortEase has transformed the way creators approach YouTube Shorts, making it an indispensable tool in the digital video landscape. I'm thrilled to have been part of this revolutionary project! 🌟",
+          icon: 'tabler:brand-youtube',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '<a href="https://github.com/Januston/ShortEase">View on GitHub</a>',  // Text for the call to action button
+            icon: 'tabler:brand-github',  // Any icon for the button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+        {
+          title: 'Autodesk Fusion 360 Modeling 📐',
+          description:
+            "🚀 Always on a quest to develop existing skills and acquire new ones, I delved into the world of Autodesk Fusion 360. Through rigorous CAD modelling, I crafted intricate designs, transforming my digital visions into tangible 3D printed models. 💡🖨️ Every project is a testament to my commitment to continuous learning and growth. ✨📚",
+          icon: 'tabler:frustum',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '<a href="https://github.com/Januston/AutoCAD-Fusion-360-Exercises">View on GitHub</a>',  // Text for the call to action button
+            icon: 'tabler:brand-github',  // Any icon for the button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+        {
+          title: 'Personal Website 🌐',
+          description:
+            "👋 Welcome to my personal website, and I'm thrilled you found it! This website is a fun way for me to showcase my experiences and skills as a web developer. It was built using a range of technologies, including HTML, CSS/SASS, and Javascript. I also utilized the powerful open-source Astro 2.0 framework and the versatile Tailwind CSS library 🌀 to create a seamless and modern design. Thank you for taking the time to explore my website and learn more about my work! ",
+          icon: 'tabler:app-window',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '<a href="https://github.com/Januston/januston.github.io">View on GitHub</a>',  // Text for the call to action button
+            icon: 'tabler:brand-github',  // Any icon for the button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+        {
+          title: 'Real-Time OS 🕰️',
+          description:
+            "Check out my experience working on a real-time operating system project! I collaborated with a team to develop the system using the μVision Kiel IDE and implemented a binary buddy system to manage memory. We achieved interprocess communication with mailboxes and prioritized tasks using an Earliest Deadline First (EDF) scheduling algorithm to ensure timely completion ⏰. It was a challenging and rewarding project, and I'm proud to have been a part of it!",
+          icon: 'tabler:cpu',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '🔒 Code restricted by school policy.',  // Text for the call to action button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+        {
+          title: 'MLB Hall of Fame Predictor ⚾️',
+          description:
+            "Introducing the MLB Hall of Fame Predictor! Using the powerful SK-Learn library in Python 🐍, I've created a predictive model that determines a player's likelihood of being inducted into the Hall of Fame based on their stats. With the help of SQL, I ensured that the baseball data bank from 2022 was properly scrubbed and outputted to a CSV for model training and testing. The accuracy of the model is a stunning 94%, so get ready to predict the future Hall of Famers! 🏆⚾️",
+          icon: 'tabler:brand-python',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '🔒 Code restricted by school policy.',  // Text for the call to action button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+        {
+          title: 'Taiga Bot 🤖',
+          description:
+            "Meet the Taiga bot, a Discord bot I developed in early 2021! With Discord's ban on public music bots, I saw a need for a new solution. Taiga not only plays music through Discord 🎵, but it also finds gifs and images based on prompts. This versatile bot can join and leave voice channels, queue up music, loop queues or songs, and even pause music. I used JavaScript and Node.js with the Slappey JS library to bring this project to life. The Taiga bot has been a great addition to my Discord server, providing my friends and me with endless entertainment during our calls 📞.",
+          icon: 'tabler:brand-discord',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '<a href="https://github.com/Januston/Discord-Bot-Sample-Code">View on GitHub</a>',  // Text for the call to action button
+            icon: 'tabler:brand-github',  // Any icon for the button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+        {
+          title: 'RGB Light Sign 💡',
+          description:
+            "I had the opportunity to work on an exciting hardware project where I designed and created a 36 by 2.5 inch RGB light board, which could be programmed and controlled using a PIC 16F690 microcontroller.  I even designed the PCB using the Eagle board development software 🦅 and hand-assembled and soldered each board myself. The programming was done in assembly language, and the final product had the ability to strobe and change colors with ease. The end result was a mesmerizing LED sign, which not only showcased my hardware skills but also my ability to design and program functional and visually appealing products.",
+          icon: 'tabler:bulb',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '<a href="https://github.com/Januston/RGB-Light-Panels">View on GitHub</a>',  // Text for the call to action button
+            icon: 'tabler:brand-github',  // Any icon for the button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+        {
+          title: 'Line Tracing Robot 🔍',
+          description:
+            "As a computer engineering student 👨‍🔬, I also enjoy working on hardware projects. One of my earliest projects was the Line Tracing Robot, which was equipped with two UV sensors and controlled using the PIC 16F690 microcontroller. This bot was programmed in assembly language and could navigate custom tracks by detecting and following the reflected UV light with its sensors 🎚️. It was a challenging and exciting project that allowed me to gain hands-on experience with both hardware and software.",
+          icon: 'tabler:crosshair',
+          callToAction: {
+            variant: 'Link',   // Choose one from 'primary', 'secondary', 'tertiary', 'link'
+            text: '<a href="https://github.com/Januston/Line-Tracing-Robot">View on GitHub</a>',  // Text for the call to action button
+            icon: 'tabler:brand-github',  // Any icon for the button
+            classes: {
+              'custom-class': 'custom-value'  // Any custom classes if needed
+            }
+          }
+        },
+      ]}
+    />
+
+<!-- CallToAction Widget *********** -->
+<Content
+  highlight="Here's a quick look at the skills I have developed throughout my career"
+  title="Technical Skills"
+>
+  <Fragment slot="subtitle">
+    <div class="chip mx-2 my-2">HTML5</div>
+    <div class="chip mx-2 my-2">CSS/Sass</div>
+    <div class="chip mx-2 my-2">JavaScript</div>
+    <div class="chip mx-2 my-2">Typescript</div>
+    <div class="chip mx-2 my-2">Angular 2+</div>
+    <div class="chip mx-2 my-2">Angular JS</div>
+    <div class="chip mx-2 my-2">React</div>
+    <div class="chip mx-2 my-2">Bootstrap</div>
+    <div class="chip mx-2 my-2">Material UI</div>
+    <div class="chip mx-2 my-2">Astro</div>
+    <div class="chip mx-2 my-2">PHP</div>
+    <div class="chip mx-2 my-2">Drupal 8</div>
+    <div class="chip mx-2 my-2">MySQL</div>
+    <div class="chip mx-2 my-2">SQL Developer</div>
+    <div class="chip mx-2 my-2">Git/GitHub</div>
+    <div class="chip mx-2 my-2">Docker</div>
+    <div class="chip mx-2 my-2">Visual Studio Code</div>
+    <div class="chip mx-2 my-2">Chrome Extension</div>
+    <div class="chip mx-2 my-2">Java</div>
+    <div class="chip mx-2 my-2">NetSuite</div>
+    <div class="chip mx-2 my-2">SuiteScript</div>
+    <div class="chip mx-2 my-2">LMS</div>
+    <div class="chip mx-2 my-2">LTI</div>
+    <div class="chip mx-2 my-2">Five9</div>
+    <div class="chip mx-2 my-2">Autodesk Fusion 360</div>
+    <div class="chip mx-2 my-2">Nifi</div>
+    <div class="chip mx-2 my-2">C</div>
+    <div class="chip mx-2 my-2">C++</div>
+    <div class="chip mx-2 my-2">Assembly</div>
+    <div class="chip mx-2 my-2">Batch Scripts</div>    
+  </Fragment>
+</Content>
+</Content>
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Reach Out',
+        href: 'mailto: januston.nicholas@outlook.com',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
   >
-    <Fragment slot="subtitle">
-      <a class="btn" href="mailto: januston.nicholas@outlook.com" target="_blank"><Icon name='tabler:mail' class="w-10 h-10 mr-3"/>Send me an email</a>
+    <Fragment slot="title">
+      <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Want to work with me?</span>
     </Fragment>
-  </Features>
+
+    <Fragment slot="subtitle">
+      Impressed by what you've seen? Reach out and send me an email!
+    </Fragment>
+  </CallToAction>
+</Content>
 </Layout>
