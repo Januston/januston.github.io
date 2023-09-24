@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Januston Nicholas
+    template: ''
+  description: "\U0001F680 🌟 Welcome to Januston Nicholas' digital domain! Dive into my portfolio 🎨, uncover my story 📖, and let's connect 🤝. Excited to journey with you! ✨"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Januston Nicholas
     images:
       - url: '~/assets/images/default.png'
         width: 1200
